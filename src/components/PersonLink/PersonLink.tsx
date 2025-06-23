@@ -10,11 +10,10 @@ export const PersonLink: React.FC<Props> = ({ person }) => {
     return <span>{person?.name || '-'}</span>;
   }
 
+  const className = person.sex === 'f' ? 'has-text-danger' : '';
+
   return (
-    <Link
-      to={`/people/${person.slug}`}
-      className={person.sex === 'f' ? 'has-text-danger' : ''}
-    >
+    <Link to={`/people/${person.slug}`} className={className}>
       {person.name}
     </Link>
   );
